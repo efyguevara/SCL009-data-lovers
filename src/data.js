@@ -3,8 +3,8 @@
 // esta es una función de ejemplo
 // puedes ver como agregamos la función a nuestro objeto global window
 
-const example = () => {
-  return 'example';
-};
+// const pokemons = () => {
+//return 'pokemons';
+// };
 
-window.example = example;
+//window.main.onload = pokemons;
