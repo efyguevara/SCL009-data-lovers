@@ -12,52 +12,76 @@
   </head>
   <body>
 <!-- Image and text -->
-<nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#">
-      <!--<img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="60" height="60" class="d-inline-block align-top" alt="">
-      Bootstrap-->
-    </a>
-  </nav>
+
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">POKEDEX</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
     
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link active" href="#">Estadisticas</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
+
+          <li id="a" change="types()" class="nav-item dropdown">
+            <select  class="form-control" id="selectType">
+                <option class="dropdown-item" value="">--Selecciona un tipo--</option>
+                <option class="dropdown-item" id="Normal" value="Normal">Normal</option>
+                <option class="dropdown-item" value="Fire">Fuego (Fire)</option>
+                <option class="dropdown-item" value="Water">Agua (Water)</option>
+                <option class="dropdown-item" value="Grass">Hierba / Planta (Grass)</option>
+                <option class="dropdown-item" value="Electric">Eléctrico (Electric)</option>
+                <option class="dropdown-item" value="Ice">Hielo (Ice)</option>
+                <option class="dropdown-item" value="Fighting">Lucha (Fighting)</option>
+                <option class="dropdown-item" value="Poison">Veneno (Poison)</option>
+                <option class="dropdown-item" value="Ground">Tierra (Ground)</option>
+                <option class="dropdown-item" value="Rock">Roca (Rock)</option>
+                <option class="dropdown-item" value="Flying">Volador (Flying)</option>
+                <option class="dropdown-item" value="Psychic">Psíquico (Psychic)</option>
+                <option class="dropdown-item" value="Bug">Insecto / Bicho (Bug)</option>
+                <option class="dropdown-item" value="Ghost">Fantasma (Ghost)</option>
+                <option class="dropdown-item" value="Dragon">Dragon</option>
+            </select>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
+
+          <li id="a" change="types()" class="nav-item dropdown">
+                <select  class="form-control" id="toOrder">
+                    <option class="dropdown-item" value="">Ordenar por:</option>
+                    <option class="dropdown-item" id="Normal" value="Normal">Normal</option>
+                    <option class="dropdown-item" value="Fire">Fuego (Fire)</option>
+                    <option class="dropdown-item" value="Water">Agua (Water)</option>
+                    <option class="dropdown-item" value="Grass">Hierba / Planta (Grass)</option>
+                    <option class="dropdown-item" value="Electric">Eléctrico (Electric)</option>
+                    <option class="dropdown-item" value="Ice">Hielo (Ice)</option>
+                    <option class="dropdown-item" value="Fighting">Lucha (Fighting)</option>
+                    <option class="dropdown-item" value="Poison">Veneno (Poison)</option>
+                    <option class="dropdown-item" value="Ground">Tierra (Ground)</option>
+                    <option class="dropdown-item" value="Rock">Roca (Rock)</option>
+                    <option class="dropdown-item" value="Flying">Volador (Flying)</option>
+                    <option class="dropdown-item" value="Psychic">Psíquico (Psychic)</option>
+                    <option class="dropdown-item" value="Bug">Insecto / Bicho (Bug)</option>
+                    <option class="dropdown-item" value="Ghost">Fantasma (Ghost)</option>
+                    <option class="dropdown-item" value="Dragon">Dragon</option>
+                </select>
+              </li>
+        
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        </form> 
       </div>
     </nav>  
     <div id="root">
         <div class="row" id="contenedor"></div>
     </div>
-    <div id="ruta">
-    </div>
+
     
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

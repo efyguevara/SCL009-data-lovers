@@ -4,13 +4,32 @@ require('../src/data');
 require('./data.spec.js');
 
 
-describe('example', () => {
+describe('filterType', () => {
   
   it('debería ser una función', () => {
-    assert.equal(typeof example, 'function');
+    assert.equal(typeof filterType, 'function');
   });
 
-  it('debería retornar "example"', () => {
-    assert.equal(example(), 'example');
+
+
+  let data = [
+    {
+      "name": "Bulbasaur",
+      "type": [
+        "Grass",
+        "Poison"
+      ],
+      
+      "name": "Blastoise",
+      "type": [
+        "Water"
+      ],  
+    }
+  ]
+  it('debería retornar "Blastoise" para el tipo "Water"', () => {
+    assert.deepEqual(('data', 'Water'),  {"name": "Bulbasaur","type": ["Grass", "Poison"]});
   });
 })
+
+
+//el equal no sirve para testear objetos ni arrays
