@@ -7,19 +7,18 @@
 //return 'pokemons';
 // };
 
+      
 
-let filterType = "";
-
-
-filterType = (pokes, condition) => {
+let filterType = (pokes, condition) => {
   let filterTypeResult = pokes.filter( element => {
-    return element.type == "condition"
+    return element.type === condition
   })
-    //return filterTypeResult.innerHTML(filterType);
-// console.log(filterData)
-// }
+    return filterTypeResult;
+
 }
 window.filterType = filterType
+
+
 // al final declaramos todos lo window.(....) que sean necesarios para hacer globales todas las funciones
 
 
