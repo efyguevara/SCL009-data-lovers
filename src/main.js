@@ -25,7 +25,6 @@ window.onload = () => {
     }
 }
 
-
 let selectType = document.getElementById("selectType");
 let container = document.getElementById("contenedor");
 
@@ -60,3 +59,32 @@ selectType.addEventListener("change", (event) => {
             </div>`
     }
 )})
+
+const pokeOrder = document.getElementById("selectOrder");
+
+      pokeOrder.addEventListener('change', () => {
+        
+         let selectionOrder = pokes.sort((element)=> element.name.includes(event.target.value)); 
+         container.innerHTML = "";
+         console.log(selectionOrder);
+         
+         selectionOrder.forEach(element => { 
+             container.innerHTML += 
+             `<div class="col-sm-12 col-md-4 col-lg-2 text-center ">
+             <div id="each-card" class="card text-center">
+                 <div class="row">
+                     <div class="col-6">    
+                         <p class="col card-body text-left">N° ${(element.num)}</p>
+                     </div>
+                     <div class="form-check offset-2 col-4 ">
+                         <input class="form-check-input" type="checkbox" value="" id="checkCompare">
+                     </div>
+                     
+                 </div>        
+                 <img src="${(element.img)}" class="card-img-top" alt="${(element.num)}>
+                 <h3 class="card-body">${(element.name)}</h3>
+                 <p class="card-body">Tipo: ${(element.type)}</p>
+             </div>
+         </div>`
+         });
+      });
