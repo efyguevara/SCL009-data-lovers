@@ -20,6 +20,42 @@ window.filterType = filterType
 
 
 // al final declaramos todos lo window.(....) que sean necesarios para hacer globales todas las funciones
+//ordenar 
+
+
+
+let sortData = (pokes, sortBy) => {
+  console.log(sortData); 
+
+  if (sortBy == 'a-z') {
+
+    return pokes.sortData((a, b) => {
+      if (a.name > b.name) {
+        return 1;
+      }
+      if (a.name < b.name) {
+        return -1;
+      }
+      return 0;
+    });
+  }
+
+  if (sortBy == 'z-a') {
+    var descending = _.sortBy(pokes, 'z-a').reverse(); 
+            console.log(descending); 
+    //return sortData.reverse();
+    // return pokes.sortData((a, b) => {
+  //     if (a.name < b.name) {
+  //       return 1;
+  //     }
+  //     if (a.name > b.name) {
+  //       return -1;
+  //     }
+  //     return 0;
+  //   });
+  // }
+}}
+
 
 
 

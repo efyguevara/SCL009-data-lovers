@@ -52,27 +52,16 @@
           </select>
         </li>
 
-        <li id="a" change="types()" class="nav-item dropdown">
-          <select class="form-control" id="toOrder">
-            <option class="dropdown-item" value="">Ordenar por:</option>
-            <option class="dropdown-item" id="Normal" value="Normal">Normal</option>
-            <option class="dropdown-item" value="Fire">Fuego (Fire)</option>
-            <option class="dropdown-item" value="Water">Agua (Water)</option>
-            <option class="dropdown-item" value="Grass">Hierba / Planta (Grass)</option>
-            <option class="dropdown-item" value="Electric">Eléctrico (Electric)</option>
-            <option class="dropdown-item" value="Ice">Hielo (Ice)</option>
-            <option class="dropdown-item" value="Fighting">Lucha (Fighting)</option>
-            <option class="dropdown-item" value="Poison">Veneno (Poison)</option>
-            <option class="dropdown-item" value="Ground">Tierra (Ground)</option>
-            <option class="dropdown-item" value="Rock">Roca (Rock)</option>
-            <option class="dropdown-item" value="Flying">Volador (Flying)</option>
-            <option class="dropdown-item" value="Psychic">Psíquico (Psychic)</option>
-            <option class="dropdown-item" value="Bug">Insecto / Bicho (Bug)</option>
-            <option class="dropdown-item" value="Ghost">Fantasma (Ghost)</option>
-            <option class="dropdown-item" value="Dragon">Dragon</option>
+        <li id="a" class="nav-item dropdown">
+          <select class="form-control" id="selectOrder">
+            <option value="0">--Ordenar alfabéticamente--</option>
+            <option value="a-z">A-Z</option>
+            <option value="z-a">Z-A</option>
+           </select>
           </select>
         </li>
-
+      
+       
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
