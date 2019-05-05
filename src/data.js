@@ -8,7 +8,7 @@
 //return 'pokemons';
 // };
 
-      
+     
 
 let filterType = (pokes, condition) => {
   let filterTypeResult = pokes.filter( element => {
@@ -42,7 +42,22 @@ function sortpokes(pokes,selection){
 
 
 
+// ver si me sirve este codigo
+// let sortData = (pokes, sortBy, type) => {
+//   console.log(sortData); 
 
+//   if (sortBy == "A - Z") {
+
+//     return pokes.sortData((a, b) => {
+//       if (a.name > b.name) {
+//         return 1;
+//       }
+//       if (a.name < b.name) {
+//         return -1;
+//       }
+//       return 0;
+//     });
+//   }
 
 // let sortOrder = event.target.value;
         

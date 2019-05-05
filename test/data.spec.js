@@ -1,7 +1,7 @@
-//global.window = global;
-//global.assert = require('chai').assert;
-//require('../src/pokemon.js');
-//require('./data.spec.js');
+global.window = global;
+global.assert = require('chai').assert;
+require('../src/data/pokemon/pokemon.js');
+require('./data.spec.js');
 
 
 describe('filterType', () => {
@@ -9,7 +9,7 @@ describe('filterType', () => {
   let data = [
     {
       "name": "Bulbasaur",
-      "type": "Grass",
+      "type": ["Grass", "Poison"]
     },
     { 
       "name": "Blastoise",
@@ -21,7 +21,7 @@ describe('filterType', () => {
     assert.equal(typeof filterType, 'function');
   });
 
-  it('debería retornar "Blastoise" cuando filtro por tipo "Water"', () => {
+  it('debería retornar el objeto "Blastoise" cuando filtro por tipo "Water"', () => {
     assert.deepEqual(window.filterType(data, 'Water'), [{"name": "Blastoise", "type": "Water"}]);
 });
 })
