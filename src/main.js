@@ -1,6 +1,7 @@
 /* Manejo del DOM */
 //función que muestra
 const pokes = POKEMON.pokemon;
+let filteredPokes = pokes; 
 
 window.onload = () => {
     //document.getElementById("root").innerHTML=``;
@@ -37,10 +38,10 @@ selectType.addEventListener("change", (event) => {
     //el event es lo que sucedio con el elemento (evento change)
     //el target indica el elemento seleccionado cuando el selecType escuche (que se selecciono una opcion) 
     //value da el valor que tiene el elemento seleccionado
-    let filter = pokes.filter((element) => element.type.includes(event.target.value));
+    filteredPokes = pokes.filter((element) => element.type.includes(event.target.value));
     container.innerHTML = "";
 
-    filter.forEach(element => {
+    filteredPokes.forEach(element => {
         container.innerHTML +=
             `<div class="col-sm-12 col-md-4 col-lg-2 text-center ">
                 <div id="each-card" class="card text-center">
@@ -66,7 +67,7 @@ const pokeOrder = document.getElementById("selectOrder");
 
       pokeOrder.addEventListener('change', () => {
         let selection = pokeOrder.value;
-         let selectionOrder = sortpokes(pokes,selection); 
+         let selectionOrder = sortpokes(filteredPokes,selection); 
          container.innerHTML = "";
          
          selectionOrder.forEach(element => { 

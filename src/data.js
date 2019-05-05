@@ -41,6 +41,29 @@ function sortpokes(pokes,selection){
 }
 
 
+
+
+
+// let sortOrder = event.target.value;
+        
+//          let selectionOrder = pokes.sort((element, nextElement)=> {
+//              if (element.name > nextElement.name) {
+//                 return 1;
+//               }
+//               if (element.name < nextElement.name) {
+//                 return -1;
+//               }
+//               return 0;
+//          });
+//          if(sortOrder === 'z-a'){
+//              selectionOrder.reverse();
+//          }
+
+
+
+
+
+
 // al final declaramos todos lo window.(....) que sean necesarios para hacer globales todas las funciones
 
 // let sortData = (pokes, sortBy) => {
@@ -73,19 +96,3 @@ function sortpokes(pokes,selection){
 //     });
 //   }
 // }
-
-
-
-
-
-
-
- /*
-al hacer click en select se hace un addeventlistener que retorne el objeto
-en vez de retornar lo que seleccionamos, que retorne todos los pokemons que tienen esa carateristica
-display None display block
-luego se imprime se guarda el resultado cpon un arreglo
-en el index colocar un div con id="xxx" donde se va a hacer el innerHeight.html para que se muestre
-*/
-
-//  ["Grass", "Poison", "Fire", "Flying", "water", "Bug", "Normal", "Electric", "Ground", "Fighting", "Psychic", "Rock","Gost", "Ice", "Dragon"]; 
