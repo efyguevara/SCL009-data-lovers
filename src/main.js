@@ -25,6 +25,7 @@ window.onload = () => {
     }
 }
 
+
 let selectType = document.getElementById("selectType");
 let container = document.getElementById("contenedor");
 
@@ -60,13 +61,13 @@ selectType.addEventListener("change", (event) => {
     }
 )})
 
+
 const pokeOrder = document.getElementById("selectOrder");
 
       pokeOrder.addEventListener('change', () => {
-        
-         let selectionOrder = pokes.sort((element)=> element.name.includes(event.target.value)); 
+        let selection = pokeOrder.value;
+         let selectionOrder = sortpokes(pokes,selection); 
          container.innerHTML = "";
-         console.log(selectionOrder);
          
          selectionOrder.forEach(element => { 
              container.innerHTML += 
@@ -88,3 +89,23 @@ const pokeOrder = document.getElementById("selectOrder");
          </div>`
          });
       });
+
+// function sortpokes(pokes,selection){
+//     var orderedPokes = pokes;
+//     if (selection == "a-z"){
+//         orderedPokes.sort(function(a, b){
+//             if(a.name < b.name) { return -1; }
+//             if(a.name > b.name) { return 1; }
+//             return 0;
+//         })
+//     }
+//     if(selection == "z-a"){
+//         orderedPokes.sort(function(a, b){
+//             if(a.name > b.name) { return -1; }
+//             if(a.name < b.name) { return 1; }
+//             return 0;
+//         })
+//     }     
+    
+//     return orderedPokes;
+// }
