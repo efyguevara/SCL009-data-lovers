@@ -52,8 +52,8 @@ selectType.addEventListener("change", (event) => {
 const pokeOrder = document.getElementById("selectOrder");
 
       pokeOrder.addEventListener('change', () => {
-        let selection = pokeOrder.value;
-         let selectionOrder = sortpokes(filteredPokes,selection); 
+         let sortOrder = pokeOrder.value;
+         let selectionOrder = sortpokes(pokes,"name", sortOrder); 
          container.innerHTML = "";
          
          selectionOrder.forEach(element => { 
