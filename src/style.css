@@ -4,6 +4,7 @@ body {
 
 .cards {
     border-radius: 15px;
+<<<<<<< Updated upstream
     background-color:#fff;
     color: rgb(0, 0, 0);
     flex-direction: column;    
@@ -14,3 +15,11 @@ body {
    display:flex;
    justify-content: center; 
 }
+=======
+    border-style: solid;
+    border-color: gray;
+}
+.navbar {
+    background: #930505!important;
+}
+>>>>>>> Stashed changes
