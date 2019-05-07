@@ -50,7 +50,7 @@ window.onload = () => {
 
         pokeOrder.addEventListener('change', () => {
             let sortOrder = pokeOrder.value;
-            let selectionOrder = sortpokes(filteredPokes,"name", sortOrder); 
+            let selectionOrder = window.sortpokes(filteredPokes, "name", sortOrder); 
             container.innerHTML = "";
             
             selectionOrder.forEach(element => { 
