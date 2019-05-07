@@ -1,5 +1,16 @@
+body {
+    background-color: #d6d3d3;
+}
+
 .cards {
     border-radius: 15px;
-    border-style: solid;
-    border-color: gray;
+    background-color:#fff;
+    color: rgb(0, 0, 0);
+    flex-direction: column;    
+    margin: 8px;
+}
+
+#contenedor {
+   display:flex;
+   justify-content: center; 
 }

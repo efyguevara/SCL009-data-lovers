@@ -5,29 +5,29 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-   <!-- Bootstrap CSS -->
+  <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <title>Data Lovers</title>
   <link rel="stylesheet" href="style.css" />
-
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">POKEDEX</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+          <a id="home" class="nav-link" href="#">Inicio <span class="sr-only"></span></a>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Estadisticas</a>
+        <li class="nav-item active">
+          <a id="estadisticas" class="nav-link" href="#">Estadísticas<span class="sr-only"></span></a>
         </li>
 
         <li class="nav-item dropdown">
@@ -49,7 +49,7 @@
             <option class="dropdown-item" value="Ghost">Fantasma (Ghost)</option>
             <option class="dropdown-item" value="Dragon">Dragon</option>
           </select>
-        </li> 
+        </li>
 
         <li class="nav-item dropdown">
           <select class="form-control offset-1" id="selectOrder">
@@ -58,24 +58,21 @@
             <option value="z-a">Z-A</option>
             <option class="dropdown-item" value="numAsc">N° ascendente</option>
             <option class="dropdown-item" value="numDesc">N° descendente</option>
-           </select>
+          </select>
           </select>
         </li>
-      
-        
+
+
       </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
     </div>
   </nav>
-  
-  
+
   <div class="container pt-5" id="root">
-
     <div class="row" id="contenedor"></div>
-
   </div>
 
 
@@ -92,7 +89,6 @@
   <script src="./data/pokemon/pokemon.js"></script>
   <script src="data.js"></script>
   <script src="main.js"></script>
-
+  <script src="graficas.js"></script>
 </body>
-
 </html>
