@@ -1,15 +1,4 @@
 
-/* Manejo de data */
-
-// esta es una función de ejemplo
-// puedes ver como agregamos la función a nuestro objeto global window
-
-// const pokemons = () => {
-//return 'pokemons';
-// };
-
-     
-
 let filterType = (pokes, condition) => {
   let filterTypeResult = pokes.filter( element => {
     return element.type === condition
@@ -20,25 +9,50 @@ let filterType = (pokes, condition) => {
 window.filterType = filterType
 
 
-function sortpokes(pokes,selection){
+let sortpokes = (pokes,sortBy, sortOrder) =>  {
   let orderedPokes = pokes;
-  if (selection == "a-z"){
-      orderedPokes.sort(function(a, b){
-          if(a.name < b.name) { return -1; }
-          if(a.name > b.name) { return 1; }
+  if (sortOrder == "a-z"){
+      orderedPokes.sort((a, b) =>{
+          if (a[sortBy] < b[sortBy]) { return -1; }
+          if (a[sortBy] > b[sortBy]) { return 1; }
           return 0;
       })
   }
-  if(selection == "z-a"){
-      orderedPokes.sort(function(a, b){
-          if(a.name > b.name) { return -1; }
-          if(a.name < b.name) { return 1; }
+  if(sortOrder == "z-a"){
+      orderedPokes.sort((a, b ) => {
+          if(a[sortBy] > b[sortBy]) { return -1; }
+          if(a[sortBy] < b[sortBy]) { return 1; }
           return 0;
       })
   }     
   
   return orderedPokes;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
