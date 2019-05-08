@@ -60,8 +60,6 @@
             <option class="dropdown-item" value="numDesc">N° descendente</option>
           </select>
         </li>
-
-
       </ul>
       <form id="buscar" class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -71,11 +69,23 @@
   </nav>
 
   <div class="container pt-5" id="root">
-    <div class="row" id="imprcalculo"></div>
     <div class="row" id="contenedor"></div>
+    <div class="row" id="imprcalculo">
+      <div class="container">
+        <table class="table table-striped">
+          <h1>Estadísticas por tipo de Pokemon</h1>
+          <thead>
+            <tr class="table thead-dark  ">
+              <th scope="col"></th>
+              <th scope="col">Tipo</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">%</th>
+            </tr>
+          </thead>
+          <tbody class="" id="infoPercent"></tbody>
+      </div>
+    </div>
   </div>
-
-
 
   <script src=" https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
