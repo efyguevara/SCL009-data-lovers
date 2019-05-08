@@ -1,6 +1,9 @@
 /* Manejo de data */
 const filterType = (pokes, condition) => {
-  return pokes.filter((element) => element.type.includes(condition))
+  let filterTypeResult = pokes.filter(element => {
+    return element.type === condition
+  })
+    return filterTypeResult;
 }
 
 const sortpokes = (filteredPokes, sortBy, sortOrder) => {
@@ -45,9 +48,11 @@ const computedStats = (pokes) => {
   const data = tipos.map(element => {
     const count = filterType(pokes, element).length
     const percent = count / pokes.length * 100;
-    console.log(`pokemones de ${element} son ${count} que equivale al ${percent}%`);
+    //console.log(`${element} ${count} ${percent}`);
+    //console.log({ "type": element, "count": count, "percent": percent.toFixed(2) });
+
     return { "type": element, "count": count, "percent": percent.toFixed(2) };
-  });
+  }); 
   return data;
 }
 
