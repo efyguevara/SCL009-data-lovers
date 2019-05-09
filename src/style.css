@@ -1,25 +1,23 @@
 body {
-    background-image: rgba(176,196,222);
+    background: #d7d7d7;
 }
 
 .cards {
-    border-radius: 5%; 
-    padding: 1.5rem;
-    background-color: rgb(100,149,237);
+    border-radius: 3%; 
+    padding-bottom: 1.0rem;
+    background-color: #ffffff;
     color: rgb(0, 0, 0);
     flex-direction: column;    
-    margin: 0.5rem;
-    font-family: 'Concert One', cursive;
-    
+    margin: 1rem;    
 }
 
 #contenedor {
-   display:flex;
-   justify-content: center; 
+    display:flex;
+    justify-content: center; 
 }
 
 .navbar {
-  background: rgba(194, 44, 3, .8)!important;
+    background: rgba(194, 44, 3, .8)!important;
 } 
 
 .navbar-brand {
@@ -27,9 +25,9 @@ body {
 }
 
 .navbar-brand>img {
-height: 100%;
-padding: 15px;
-width: auto;
+    height: 100%;
+    padding: 15px;
+    width: auto;
 }
 
 #tableContainer{
