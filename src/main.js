@@ -29,10 +29,10 @@ window.onload = () => {
         //el event es lo que sucedio con el elemento (evento change)
         //el target indica el elemento seleccionado cuando el selecType escuche (que se selecciono una opcion) 
         //value da el valor que tiene el elemento seleccionado
-        filteredPokes = filterType(pokes, event.target.value);
+        filteredPokes = pokes.filter((element) => element.type.includes(event.target.value));
         container.innerHTML = "";
 
-        filteredPokes.forEach(element => {
+        filteredPokes.forEach((element) => {
             container.innerHTML +=
                 `<a href="#" id="cardbtn-${(element.num)}" class="col-sm-12 col-md-4 col-lg-2 text-center cards ">
                     <div class="row">
@@ -44,7 +44,7 @@ window.onload = () => {
                     <h3 class="card-body">${(element.name)}</h3>
                     <p class="card-body">Tipo: ${(element.type)}</p>
                 </a>`
-        })
+        })        
     })
 
     const pokeOrder = document.getElementById("selectOrder");
@@ -69,7 +69,6 @@ window.onload = () => {
     });
 
     const calculo = document.getElementById("estadisticas");
-
     calculo.addEventListener('click', () => {
         const table = document.getElementById("infoPercent");
         let calculado = window.computedStats(pokes);

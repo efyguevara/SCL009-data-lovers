@@ -12,7 +12,7 @@ describe('filterType', () => {
     },
     { 
       "name": "Blastoise",
-      "type": "Water"  
+      "type": ["Water"]  
     }
   ]
   
@@ -21,7 +21,7 @@ describe('filterType', () => {
   });
 
   it('debería retornar el objeto "Blastoise" cuando filtro por tipo "Water"', () => {
-    assert.deepEqual(window.filterType(data, 'Water'), [{"name": "Blastoise", "type": "Water"}]);
+    assert.deepEqual(window.filterType(data, 'Water'), [{"name": "Blastoise", "type": ["Water"]}]);
   });
 })
 
@@ -47,5 +47,31 @@ describe('sortpokes', () => {
 
   it('debería retornar el objeto "Kakuna, Bulbasaur" cuando se ordene "Z - A"', () => {
     assert.deepEqual(window.sortpokes(dataOrder, "name", 'z-a'), [{"name": "Kakuna", "type": ["Bug", "Poison"]}, {"name": "Bulbasaur", "type": ["Grass", "Poison"]}]);
+  });
+})
+
+
+describe('computedStats', () => {
+  const dataCalc = [
+    {
+      "name": "Bulbasaur",
+      "type": ["Grass", "Poison"]
+    },
+    { 
+      "name": "Blastoise",
+      "type": ["Water"]  
+    },
+    { 
+      "name": "Kakuna",
+      "type": ["Bug", "Poison"]  
+    }
+  ]
+
+  it('debería ser una función', () => {
+    assert.equal(typeof computedStats, 'function');
+  });
+
+  it('debería retornar los objetos "[{type: "Grass", count: 1, percent: "33.33"}, {type: "Poison", count: 2, percent: "66.66"}, {type: "Water", count: 1, percent: "33.33"}, {type: "Bug", count: 1, percent: "33.33"}]" cuando haga click en el boton "estadisticas"', () => {
+    assert.deepEqual(window.computedStats(dataCalc), [{count: 1, percent: "33.33"}, {count: 2, percent: "66.66"}, {count: 1, percent: "33.33"}, {count: 1, percent: "33.33"}]);
   });
 })
