@@ -24,11 +24,14 @@ body {
 
 .navbar-brand {
     padding: 0rem;
-  }
-  .navbar-brand>img {
-    height: 100%;
-    padding: 15px;
-    width: auto;
-  }
+}
 
+.navbar-brand>img {
+height: 100%;
+padding: 15px;
+width: auto;
+}
 
+#tableContainer{
+    display: none;
+}

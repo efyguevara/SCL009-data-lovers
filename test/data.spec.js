@@ -70,8 +70,8 @@ describe('computedStats', () => {
   it('debería ser una función', () => {
     assert.equal(typeof computedStats, 'function');
   });
-
+  
   it('debería retornar los objetos "[{type: "Grass", count: 1, percent: "33.33"}, {type: "Poison", count: 2, percent: "66.66"}, {type: "Water", count: 1, percent: "33.33"}, {type: "Bug", count: 1, percent: "33.33"}]" cuando haga click en el boton "estadisticas"', () => {
-    assert.deepEqual(window.computedStats(dataCalc), [{count: 1, percent: "33.33"}, {count: 2, percent: "66.66"}, {count: 1, percent: "33.33"}, {count: 1, percent: "33.33"}]);
+    assert.deepEqual(window.computedStats(dataCalc), [{type: "Grass", count: 1, percent: "33.33"}, {type: "Poison", count: 2, percent: "66.67"}, {type: "Water", count: 1, percent: "33.33"}, {type: "Bug", count: 1, percent: "33.33"}]);
   });
 })

@@ -1,14 +1,11 @@
 /* Manejo de data */
-const filterType = (pokes, condition) => {
-  let filterTypeResult = pokes.filter(element => {
-    return element.type === condition
-  })
-    return filterTypeResult;
+const filterType = (pokes, selectedType) => {
+  return pokes.filter((element) => element.type.includes(selectedType));
 }
 
 const sortpokes = (filteredPokes, sortBy, sortOrder) => {
   let orderedPokes = filteredPokes;
-  if (sortOrder == "a-z") {
+  if (sortOrder == "A - Z" || sortOrder == "Nº ascendente") {
     orderedPokes.sort((a, b) => {
       if (a[sortBy] < b[sortBy]) {
         return -1;
@@ -19,7 +16,7 @@ const sortpokes = (filteredPokes, sortBy, sortOrder) => {
       return 0;
     })
   }
-  if (sortOrder == "z-a") {
+  if (sortOrder == "Z - A" || sortOrder == "Nº descendente") {
     orderedPokes.sort((a, b) => {
       if (a[sortBy] > b[sortBy]) {
         return -1;
@@ -53,6 +50,7 @@ const computedStats = (pokes) => {
 
     return { "type": element, "count": count, "percent": percent.toFixed(2) };
   }); 
+  // console.log(data);
   return data;
 }
 
