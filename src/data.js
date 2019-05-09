@@ -60,8 +60,3 @@ window.filterType = filterType;
 window.sortpokes = sortpokes;
 window.computedStats = computedStats;
 
-const computeStats = (arr) => {
-  let result = parseInt(arr.length / 151 * 100);
-  return result;
-}
-window.computeStats = computeStats;
