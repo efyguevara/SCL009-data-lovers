@@ -1,37 +1,60 @@
 /* Manejo de data */
-
-// esta es una función de ejemplo
-// puedes ver como agregamos la función a nuestro objeto global window
-
-// const pokemons = () => {
-//return 'pokemons';
-// };
-
-      
-
-let filterType = (pokes, condition) => {
-  let filterTypeResult = pokes.filter( element => {
-    return element.type === condition
-  })
-    return filterTypeResult;
-
+const filterType = (pokes, selectedType) => {
+  return pokes.filter((element) => element.type.includes(selectedType));
 }
-window.filterType = filterType
 
+const sortpokes = (filteredPokes, sortBy, sortOrder) => {
+  let orderedPokes = filteredPokes;
+  if (sortOrder == "A - Z" || sortOrder == "Nº ascendente") {
+    orderedPokes.sort((a, b) => {
+      if (a[sortBy] < b[sortBy]) {
+        return -1;
+      }
+      if (a[sortBy] > b[sortBy]) {
+        return 1;
+      }
+      return 0;
+    })
+  }
+  if (sortOrder == "Z - A" || sortOrder == "Nº descendente") {
+    orderedPokes.sort((a, b) => {
+      if (a[sortBy] > b[sortBy]) {
+        return -1;
+      }
+      if (a[sortBy] < b[sortBy]) {
+        return 1;
+      }
+      return 0;
+    })
+  }
+  return orderedPokes;
+}
 
-// al final declaramos todos lo window.(....) que sean necesarios para hacer globales todas las funciones
+//haciendo contador para que recorra la data y vaya sumando de acuerdo al tipo encontrado, se guarde la cuenta en el objeto de cada tipo para poder mostrarla en la tabla
+const computedStats = (pokes) => {
+  let tipos = [];
 
+  pokes.forEach((element) => {
+    element.type.forEach(ele => {
+      if (!tipos.includes(ele)) {
+        tipos.push(ele)
+      }
+    });
+  })
 
+  const data = tipos.map(element => {
+    const count = filterType(pokes, element).length
+    const percent = count / pokes.length * 100;
+    //console.log(`${element} ${count} ${percent}`);
+    //console.log({ "type": element, "count": count, "percent": percent.toFixed(2) });
 
+    return { "type": element, "count": count, "percent": percent.toFixed(2) };
+  }); 
+  // console.log(data);
+  return data;
+}
 
+window.filterType = filterType;
+window.sortpokes = sortpokes;
+window.computedStats = computedStats;
 
-
- /*
-al hacer click en select se hace un addeventlistener que retorne el objeto
-en vez de retornar lo que seleccionamos, que retorne todos los pokemons que tienen esa carateristica
-display None display block
-luego se imprime se guarda el resultado cpon un arreglo
-en el index colocar un div con id="xxx" donde se va a hacer el innerHeight.html para que se muestre
-*/
-
-//  ["Grass", "Poison", "Fire", "Flying", "water", "Bug", "Normal", "Electric", "Ground", "Fighting", "Psychic", "Rock","Gost", "Ice", "Dragon"]; 

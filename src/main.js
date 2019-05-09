@@ -1,62 +1,105 @@
 /* Manejo del DOM */
-//función que muestra
-const pokes = POKEMON.pokemon;
+const pokes = window.POKEMON.pokemon;
+const container = document.getElementById("contenedor");
+let filteredPokes = pokes;
+
+const home = document.getElementById("home");
+home.addEventListener("click", () => {
+    location.reload(true);
+})
+
 
 window.onload = () => {
-    //document.getElementById("root").innerHTML=``;
-    for (let i = 0; i < pokes.length; i++) {
-        document.getElementById("contenedor").innerHTML +=
-            `<div class="col-sm-12 col-md-4 col-lg-2 text-center ">
-            <div id="each-card" class="card text-center">
-                <div class="row">
-                    <div class="col-6">    
-                        <p class="col card-body text-left">N° ${(pokes[i].num)}</p>
-                    </div>
-                    <div class="form-check offset-2 col-4 ">
-                        <input class="form-check-input" type="checkbox" value="" id="checkCompare">
-                    </div>
-                    
-                </div>        
-                <img src="${(pokes[i].img)}" class="card-img-top" alt="${(pokes[i].num)}>
-                <h3 class="card-body">${(pokes[i].name)}</h3>
-                <p class="card-body">Tipo: ${(pokes[i].type)}</p>
-            </div>
-        </div>`
-    }
-}
+    document.getElementById("tableContainer").style.display = "none";
+    container.innerHTML = `<div class="container">    
+        <h2 text-left">Región Kanto: 151 Pokemon´s.</h2>
+    </div>`;
 
-
-let selectType = document.getElementById("selectType");
-let container = document.getElementById("contenedor");
-
-//cuando agrego el (event) le estoy diciendo que le voy a pasar un evento (es equivalente al element) y tiene dos valores, el origen y el target
-selectType.addEventListener("change", (event) => {
-    // let condition = selectType.options[selectType.selectedIndex].value;
-    // console.log(condition); 
-
-    //el event es lo que sucedio con el elemento (evento change)
-    //el target indica el elemento seleccionado cuando el selecType escuche (que se selecciono una opcion) 
-    //value da el valor que tiene el elemento seleccionado
-    let filter = pokes.filter((element) => element.type.includes(event.target.value));
-    container.innerHTML = "";
-
-    filter.forEach(element => {
+    pokes.forEach(element => {
         container.innerHTML +=
-            `<div class="col-sm-12 col-md-4 col-lg-2 text-center ">
-                <div id="each-card" class="card text-center">
+            `<div href="#" id="cardbtn"${(element.num)}" class="col-sm-12 col-md-4 col-lg-2 text-center cards">
+                <div class="row">
+                    <div class="">  
+                        <p class="card-body text-left">N° ${(element.num)}</p>
+                    </div>
+                </div>        
+                <img src="${(element.img)}" class="card-img-top" alt="${(element.num)}>
+                <h3 class="card-body">${(element.name)}</h3>
+                <p class="card-body">Tipo: ${(element.type)}</p>
+            </div>`
+    })
+
+   const selectType = document.getElementById("selectType");
+    //cuando agrego el (event) le esttypeoy diciendo que le voy a pasar un evento (es equivalente al element) y tiene dos valores, el origen y el target
+    selectType.addEventListener("change", (event) => {
+        document.getElementById("tableContainer").style.display = "none";
+        //el event es lo que sucedio con el elemento (evento change)
+        //el target indica el elemento seleccionado cuando el selecType escuche (que se selecciono una opcion) 
+        //value da el valor que tiene el elemento seleccionado
+        filteredPokes = window.filterType(pokes, event.target.value);
+        tableContainer = "";
+        container.innerHTML = `<div class="container">    
+        <h2 text-left">Pokemons de tipo: ${(selectType.value)}.</h2>
+    </div>`;
+        filteredPokes.forEach((element) => {
+            container.innerHTML +=
+                `<div href="#" id="cardbtn-${(element.num)}" class="col-sm-12 col-md-4 col-lg-2 text-center cards ">
                     <div class="row">
-                        <div class="col-6">    
-                            <p class="col card-body text-left">N° ${(element.num)}</p>
+                        <div class="">    
+                            <p class="card-body text-left">N° ${(element.num)}</p>
                         </div>
-                        <div class="form-check offset-2 col-4 ">
-                            <input class="form-check-input" type="checkbox" value="" id="checkCompare">
-                        </div>
-                        
                     </div>        
                     <img src="${(element.img)}" class="card-img-top" alt="${(element.num)}>
                     <h3 class="card-body">${(element.name)}</h3>
                     <p class="card-body">Tipo: ${(element.type)}</p>
-                </div>
-            </div>`
-    }
-)})
+                </div>`
+        })  
+    })
+  
+
+    const pokeOrder = document.getElementById("selectOrder");
+    pokeOrder.addEventListener('change', () => {
+        document.getElementById("tableContainer").style.display = "none";
+        let sortOrder = pokeOrder.value;
+        let sortBy = pokeOrder.options[pokeOrder.selectedIndex].getAttribute('data-sort-by');
+        let selectionOrder = window.sortpokes(filteredPokes, sortBy, sortOrder);
+        tableContainer = "";
+        container.innerHTML = `<div class="container">    
+        <h2 text-left">Pokemons de tipo: ${(selectType.value)} - Orden: ${pokeOrder.value}</h2>
+    </div>`;
+        
+        selectionOrder.forEach(element => {
+            container.innerHTML +=
+                `<div href="#" id="cardbtn-${(element.num)}" class="col-sm-12 col-md-4 col-lg-2 text-center cards">
+                    <div class="row">
+                        <div class="">    
+                            <p class="card-body text-left">N° ${(element.num)}</p>
+                        </div>
+                    </div>        
+                    <img src="${(element.img)}" class="card-img-top" alt="${(element.num)}>
+                    <h3 class="card-body">${(element.name)}</h3>
+                    <p class="card-body">Tipo: ${(element.type)}</p>
+                </div>`
+        });
+    });
+
+    const calculo = document.getElementById("estadisticas");
+    calculo.addEventListener('click', () => {
+        document.getElementById("tableContainer").style.display = "block";    
+        const table = document.getElementById("infoPercent");
+        let calculado = window.computedStats(pokes);
+
+        container.innerHTML = "";
+        table.innerHTML = "";
+
+        calculado.forEach(element => {
+            table.innerHTML +=
+                `<tr class="table-danger">
+                    <th scope="row"></th>
+                    <td>${element.type}</td>
+                    <td>${element.count}</td>
+                    <td>${element.percent}%</td>
+                </tr>`
+        });
+    })
+}
