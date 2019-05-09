@@ -2,7 +2,6 @@
 const pokes = window.POKEMON.pokemon;
 const container = document.getElementById("contenedor");
 let filteredPokes = pokes;
-// let botonFiltros = '';
 
 const home = document.getElementById("home");
 home.addEventListener("click", () => {
@@ -15,7 +14,7 @@ window.onload = () => {
         container.innerHTML +=
             `<a href="#" id="cardbtn-${(element.num)}" class="col-sm-12 col-md-4 col-lg-2 text-center cards">
                 <div class="row">
-                    <div class="">    
+                    <div class="">  
                         <p class="card-body text-left">N° ${(element.num)}</p>
                     </div>
                 </div>        
@@ -48,18 +47,6 @@ window.onload = () => {
                 </a>`
         })        
     })
-
-    // document.getElementById('selectType').innerHTML = botonFiltros;
-    // arr.forEach((element) => {
-    //     document.getElementById(`${element}`).addEventListener('click', () => {
-    //         filteredPokes = window.filterType( pokes,`${element}`);
-    //         vaciar();
-    //         imprimir(datatype);
-    //         document.getElementById('titulos').innerHTML = `<p id="porcentaje" class="${element}">El ${porcentaje}% de los pokemones de la región Kanto son de tipo ${element}.</p>`;
-      
-//         });
-//     })
-// };
   
 
     const pokeOrder = document.getElementById("selectOrder");
