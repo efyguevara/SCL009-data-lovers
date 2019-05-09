@@ -1,6 +1,5 @@
-  <!DOCTYPE html>
-  <html lang="en">
-
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,49 +10,50 @@
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#"> <img src="img/pokedex_marca1.png"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#"> <img src="img/pokedex_marca1.png" alt="Logo Pokemon"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-  
-    <div class="collapse navbar-collapse offset-2" id="navbarSupportedContent">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a id="home" class="nav-link" href="#">Inicio <span class="sr-only"></span></a>
-        </li>
 
-        <li class="nav-item active">
-          <a id="estadisticas" class="nav-link" href="#">Estadísticas<span class="sr-only"></span></a>
-        </li>
-      
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+              <a id="estadisticas" class="nav-link" href="#">Estadísticas<span class="sr-only"></span></a>
+            </li>          
+            
+            <li class="nav-item active">
+            <a id="home" class="nav-link" href="#">Home<span class="sr-only"></span></a>
+          </li>
 
-        <li class="nav-item dropdown">
-          <select class="form-control" id="selectType">
-            <option class="dropdown-item" value="">--Selecciona un tipo--</option>
-            <option class="dropdown-item" value="Normal">Normal</option>
-            <option class="dropdown-item" value="Fire">Fire</option>
-            <option class="dropdown-item" value="Water">Water</option>
-            <option class="dropdown-item" value="Grass">Grass</option>
-            <option class="dropdown-item" value="Electric">Electric</option>
-            <option class="dropdown-item" value="Ice">Ice</option>
-            <option class="dropdown-item" value="Fighting">Fighting</option>
-            <option class="dropdown-item" value="Poison">Poison</option>
-            <option class="dropdown-item" value="Ground">Ground</option>
-            <option class="dropdown-item" value="Rock">Rock</option>
-            <option class="dropdown-item" value="Flying">Flying</option>
-            <option class="dropdown-item" value="Psychic">Psychic</option>
-            <option class="dropdown-item" value="Bug">Bug</option>
-            <option class="dropdown-item" value="Ghost">Ghost</option>
-            <option class="dropdown-item" value="Dragon">Dragon</option>
-          </select>
-        </li>
 
-        <li class="nav-item dropdown">
+
+
+          <li class="nav-item dropdown">
+            <select class="form-control" id="selectType">
+              <option class="dropdown-item" value="">--Selecciona un tipo--</option>
+              <option class="dropdown-item" value="Normal">Normal</option>
+              <option class="dropdown-item" value="Fire">Fire</option>
+              <option class="dropdown-item" value="Water">Water</option>
+              <option class="dropdown-item" value="Grass">Grass</option>
+              <option class="dropdown-item" value="Electric">Electric</option>
+              <option class="dropdown-item" value="Ice">Ice</option>
+              <option class="dropdown-item" value="Fighting">Fighting</option>
+              <option class="dropdown-item" value="Poison">Poison</option>
+              <option class="dropdown-item" value="Ground">Ground</option>
+              <option class="dropdown-item" value="Rock">Rock</option>
+              <option class="dropdown-item" value="Flying">Flying</option>
+              <option class="dropdown-item" value="Psychic">Psychic</option>
+              <option class="dropdown-item" value="Bug">Bug</option>
+              <option class="dropdown-item" value="Ghost">Ghost</option>
+              <option class="dropdown-item" value="Dragon">Dragon</option>
+            </select>
+          </li>
+
+          <li class="nav-item dropdown">
             <select class="form-control offset-1" id="selectOrder">
               <option value="">--Ordenar--</option>
               <option value="A - Z" data-sort-by="name">A-Z</option>
@@ -62,18 +62,18 @@
               <option class="dropdown-item" value="Nº descendente" data-sort-by="id">N° descendente</option>
             </select>
           </li>
-      </ul>
-  </nav>
-  <!-- <div class="container" id= "titulos" >  -->
-      
+        </ul>
+        </div>
+    </nav>
+
     <div class="container pt-5" id="root">
-    <div class="row" id="contenedor"></div>
-    <div class="row" id="imprcalculo">
+      <div class="row" id="contenedor"></div>
+      <div class="row" id="imprcalculo">
         <div class="container" id="tableContainer">
           <h1>Estadísticas por tipo de Pokemon</h1>
-          <table class="table table-striped">  
+          <table class="table table-striped">
             <thead>
-              <tr class="table thead-dark  ">
+              <tr class="table text-center thead-dark  ">
                 <th scope="col"></th>
                 <th scope="col">Tipo</th>
                 <th scope="col">Cantidad</th>
@@ -99,4 +99,4 @@
     <script src="data.js"></script>
     <script src="main.js"></script>
   </body>
-  </html>
+</html>
