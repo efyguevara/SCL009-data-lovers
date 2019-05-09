@@ -8,12 +8,13 @@ home.addEventListener("click", () => {
     location.reload(true);
 })
 
+
 window.onload = () => {
     pokes.forEach(element => {
         container.innerHTML +=
             `<a href="#" id="cardbtn-${(element.num)}" class="col-sm-12 col-md-4 col-lg-2 text-center cards">
                 <div class="row">
-                    <div class="">    
+                    <div class="">  
                         <p class="card-body text-left">N° ${(element.num)}</p>
                     </div>
                 </div>        
@@ -23,7 +24,7 @@ window.onload = () => {
             </a>`
     })
 
-    const selectType = document.getElementById("selectType");
+   const selectType = document.getElementById("selectType");
     //cuando agrego el (event) le esttypeoy diciendo que le voy a pasar un evento (es equivalente al element) y tiene dos valores, el origen y el target
     selectType.addEventListener("change", (event) => {
         //el event es lo que sucedio con el elemento (evento change)
@@ -46,6 +47,7 @@ window.onload = () => {
                 </a>`
         })        
     })
+  
 
     const pokeOrder = document.getElementById("selectOrder");
     pokeOrder.addEventListener('change', () => {

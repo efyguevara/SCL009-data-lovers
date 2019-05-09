@@ -1,16 +1,34 @@
 body {
-    background-color: #d6d3d3;
+    background-image: rgba(176,196,222);
 }
 
 .cards {
-    border-radius: 15px;
-    background-color:#fff;
+    border-radius: 5%; 
+    padding: 1.5rem;
+    background-color: rgb(100,149,237);
     color: rgb(0, 0, 0);
     flex-direction: column;    
-    margin: 8px;
+    margin: 0.5rem;
+    font-family: 'Concert One', cursive;
+    
 }
 
 #contenedor {
    display:flex;
    justify-content: center; 
 }
+
+.navbar {
+  background: rgba(194, 44, 3, .8)!important;
+} 
+
+.navbar-brand {
+    padding: 0rem;
+  }
+  .navbar-brand>img {
+    height: 100%;
+    padding: 15px;
+    width: auto;
+  }
+
+
