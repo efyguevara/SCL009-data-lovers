@@ -1,16 +1,17 @@
 body {
-    background-image: rgba(176,196,222);
+    background: rgb(220, 227, 235);;
+    
 }
 
 .cards {
-    border-radius: 5%; 
+    border-radius: 6%; 
     padding: 1.5rem;
-    background-color: rgb(100,149,237);
+    background: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     flex-direction: column;    
     margin: 0.5rem;
-    font-family: 'Concert One', cursive;
-    
+    border: 0.125rem solid  rgba(5, 10, 27, 0.8) ;
+
 }
 
 #contenedor {
