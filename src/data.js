@@ -45,16 +45,14 @@ const computedStats = (pokes) => {
   const data = tipos.map(element => {
     const count = filterType(pokes, element).length
     const percent = count / pokes.length * 100;
-    //console.log(`${element} ${count} ${percent}`);
-    //console.log({ "type": element, "count": count, "percent": percent.toFixed(2) });
 
     return { "type": element, "count": count, "percent": percent.toFixed(2) };
-  });
-  // console.log(data);
+  })
   return data;
 }
 
 window.filterType = filterType;
 window.sortpokes = sortpokes;
 window.computedStats = computedStats;
+
 

@@ -93,11 +93,55 @@ window.onload = () => {
             const calculo = document.getElementById("estadisticas");
             calculo.addEventListener('click', () => {
                 document.getElementById("tableContainer").style.display = "block";
+
                 const table = document.getElementById("infoPercent");
                 let calculado = window.computedStats(pokes);
-
+                let ctx = document.getElementById('myChart');
+                let myChart = "";
                 container.innerHTML = "";
                 table.innerHTML = "";
+
+                let dataChart = calculado.map(element => {
+                    return {
+                        label: element.type,
+                        data: [element.count],
+                        borderWidth: 1
+                    }
+                });
+
+                myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Pokemons por tipo'],
+                        datasets: dataChart,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                        ]},
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                        }
+                    }
+                });
+                ctx.innerHTML += myChart;
 
                 calculado.forEach(element => {
                     table.innerHTML +=
@@ -107,6 +151,7 @@ window.onload = () => {
                     <td>${element.count}</td>
                     <td>${element.percent}%</td>
                 </tr>`
+
                 });
             })
         })
