@@ -49,7 +49,7 @@ const computedStats = (pokes) => {
     //console.log({ "type": element, "count": count, "percent": percent.toFixed(2) });
 
     return { "type": element, "count": count, "percent": percent.toFixed(2) };
-  }); 
+  });
   // console.log(data);
   return data;
 }

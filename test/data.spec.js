@@ -42,11 +42,11 @@ describe('sortpokes', () => {
   });
 
   it('debería retornar el objeto "Bulbasaur, Kakuna" cuando se ordene "A - Z"', () => {
-    assert.deepEqual(window.sortpokes(dataOrder, "name", 'a-z'), [{"name": "Bulbasaur", "type": ["Grass", "Poison"]}, {"name": "Kakuna", "type": ["Bug", "Poison"]}]);
+    assert.deepEqual(window.sortpokes(dataOrder, "name", 'A - Z'), [{"name": "Bulbasaur", "type": ["Grass", "Poison"]}, {"name": "Kakuna", "type": ["Bug", "Poison"]}]);
   });
 
   it('debería retornar el objeto "Kakuna, Bulbasaur" cuando se ordene "Z - A"', () => {
-    assert.deepEqual(window.sortpokes(dataOrder, "name", 'z-a'), [{"name": "Kakuna", "type": ["Bug", "Poison"]}, {"name": "Bulbasaur", "type": ["Grass", "Poison"]}]);
+    assert.deepEqual(window.sortpokes(dataOrder, "name", 'Z - A'), [{"name": "Kakuna", "type": ["Bug", "Poison"]}, {"name": "Bulbasaur", "type": ["Grass", "Poison"]}]);
   });
 })
 

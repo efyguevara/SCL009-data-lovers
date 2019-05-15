@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#"> <img src="img/pokedex_marca1.png" alt="Logo Pokemon"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -18,19 +21,15 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-
       <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <ul class="navbar-nav">
           <li class="nav-item active">
-              <a id="estadisticas" class="nav-link" href="#">Estadísticas<span class="sr-only"></span></a>
-            </li>          
-            
-            <li class="nav-item active">
-            <a id="home" class="nav-link" href="#">Home<span class="sr-only"></span></a>
+            <a id="estadisticas" class="nav-link" href="#">Estadísticas<span class="sr-only"></span></a>
           </li>
 
-
-
+          <li class="nav-item active">
+            <a id="home" class="nav-link" href="#">Home<span class="sr-only"></span></a>
+          </li>
 
           <li class="nav-item dropdown">
             <select class="form-control" id="selectType">
@@ -54,7 +53,7 @@
           </li>
 
           <li class="nav-item dropdown">
-            <select class="form-control offset-1" id="selectOrder">
+            <select class="form-control" id="selectOrder">
               <option value="">--Ordenar--</option>
               <option value="A - Z" data-sort-by="name">A-Z</option>
               <option value="Z - A" data-sort-by="name">Z-A</option>
@@ -63,40 +62,42 @@
             </select>
           </li>
         </ul>
-        </div>
+      </div>
     </nav>
+  </header>
 
-    <div class="container pt-5" id="root">
-      <div class="row" id="contenedor"></div>
-      <div class="row" id="imprcalculo">
-        <div class="container" id="tableContainer">
-          <h1>Estadísticas por tipo de Pokemon</h1>
-          <table class="table table-striped">
-            <thead>
-              <tr class="table text-center thead-dark  ">
-                <th scope="col"></th>
-                <th scope="col">Tipo</th>
-                <th scope="col">Cantidad</th>
-                <th scope="col">%</th>
-              </tr>
-            </thead>
-            <tbody class="" id="infoPercent"></tbody>
-          </table>
-        </div>
+  <div class="container pt-5" id="root">
+    <div class="row" id="contenedor"></div>
+    <div class="row" id="imprcalculo">
+      <div class="container" id="tableContainer">
+        <h1>Estadísticas por tipo de Pokemon</h1>
+        <table class="table table-striped">
+          <thead>
+            <tr class="table text-center thead-dark ">
+              <th scope="col"></th>
+              <th scope="col">Tipo</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">%</th>
+            </tr>
+          </thead>
+          <tbody class="" id="infoPercent"></tbody>
+        </table>
       </div>
     </div>
+  </div>
 
-    <script src=" https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-      </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"></script>
-    <script src="./data/pokemon/pokemon.js"></script>
-    <script src="data.js"></script>
-    <script src="main.js"></script>
-  </body>
+  <script src=" https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <!-- <script src="pokemon.json"></script> -->
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+
 </html>
