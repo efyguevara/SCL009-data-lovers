@@ -1,7 +1,7 @@
 // /* Manejo del DOM */
-// const pokes = window.POKEMON.pokemon;
 
 window.onload = () => {
+    
     fetch('https://raw.githubusercontent.com/efyguevara/SCL009-data-lovers/master/src/data/pokemon/pokemon.json')
         .then(response => {
             return response.json();
@@ -11,7 +11,7 @@ window.onload = () => {
 
             const container = document.getElementById("contenedor");
             let filteredPokes = pokes;
-
+            
 
             const home = document.getElementById("home");
             home.addEventListener("click", () => {
@@ -102,10 +102,14 @@ window.onload = () => {
                 table.innerHTML = "";
 
                 let dataChart = calculado.map(element => {
+                    
                     return {
                         label: element.type,
                         data: [element.count],
-                        borderWidth: 1
+                        borderWidth: 1,
+                        backgroundColor: [
+                            'rgba(194, 44, 3, 0.8)'
+                        ]
                     }
                 });
 
@@ -114,23 +118,7 @@ window.onload = () => {
                     data: {
                         labels: ['Pokemons por tipo'],
                         datasets: dataChart,
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)',
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                        ]},
+                        },
                     options: {
                         scales: {
                             yAxes: [{

@@ -6,9 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Data Lovers</title>
   <!-- Bootstrap CSS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>;
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -70,8 +69,8 @@
     <div class="row" id="imprcalculo">
         
       <div class="container" id="tableContainer">
-        <canvas id="myChart"></canvas>
-        <h1>Estadísticas por tipo de Pokemon</h1>
+        <h1 class="pb-5">Estadísticas por tipo de Pokemon</h1>
+        <canvas id="myChart" class="pb-5"></canvas>
         <table class="table table-striped">
           <thead>
             <tr class="table text-center thead-dark">
@@ -99,7 +98,7 @@
   <!-- <script src="pokemon.json"></script> -->
   <script src="data.js"></script>
   <script src="main.js"></script>
-  <script src="charts.js"></script>
+  
 </body>
 
 </html>
